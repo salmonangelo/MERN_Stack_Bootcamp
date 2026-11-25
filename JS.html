@@ -83,34 +83,84 @@
 
     
 
-    let fetch_api = new Promise((resolve,reject)=>{
-        let api = true;
-        if(api){
-            resolve("Fetched api data");
+    // let fetch_api = new Promise((resolve,reject)=>{
+    //     let api = true;
+    //     if(api){
+    //         resolve("Fetched api data");
 
-        }else{
-            setTimeout(() => {
-                reject("Error while fetching api data");
-            }, 2000);
-        }
-    });
-    fetch_api.then(data=>console.log(data))
-
-
-    let foodorder = new Promise((resolve,reject)=>{
-        let api = true;
-        if(api){
-            resolve("Food ordered successfully");
-
-        }else{
-            setTimeout(() => {
-                reject("Order unsuccesfull");
-            }, 2000);
-        }
-    });
-    foodorder.then(data=>console.log(data))
+    //     }else{
+    //         setTimeout(() => {
+    //             reject("Error while fetching api data");
+    //         }, 2000);
+    //     }
+    // });
+    // fetch_api.then(data=>console.log(data))
 
 
+    // let foodorder = new Promise((resolve,reject)=>{
+    //     let api = true;
+    //     if(api){
+    //         resolve("Food ordered successfully");
+
+    //     }else{
+    //         setTimeout(() => {
+    //             reject("Order unsuccesfull");
+    //         }, 2000);
+    //     }
+    // });
+    // foodorder.then(data=>console.log(data))
+
+    let emp = [
+            {
+            emp_id: 100,
+            emp_name: "varun",
+            salary: 40000,
+            skills: ["Java", "Python", "JavaScript"]
+        },
+        {
+            emp_id: 101,
+            emp_name: "priya",
+            salary: 20000,
+            company: { C1: "Google", C2: "Microsoft" }
+        }];
+        console.log(emp[0].emp_id);
+        console.log(emp[1].emp_id);
+        console.log(emp[1].emp_name);
+        console.log(emp[0].skills[0]);
+
+        //object to string 
+        let stringify_data = JSON.stringify(emp);
+        console.log(stringify_data);
+//string to object
+        let parsed_data = JSON.parse(stringify_data);
+        console.log(parsed_data);
+
+        //shallow copy
+        let emp1 = {
+            emp_id: 100,
+            emp_name: "varun",
+            salary: 40000,
+            skills: ["Java", "Python", "JavaScript"]
+        };
+        //updating shallow copy
+        let emp2 = {...emp1};
+        emp2.emp_name = "priya";            
+        console.log("original : "+emp1.emp_name); 
+        console.log(emp2.emp_name); 
+        
+        //deep copy
+        let emp3 = {
+            emp_id: 100,
+            emp_name: "varun",
+            salary: 40000,
+            skills: ["Java", "Python", "JavaScript"]
+        };  
+        let emp4 = deepCopy(emp3);
+        let emp5 = JSON.parse(JSON.stringify(emp3));
+        emp4.emp_name = "priya";
+        console.log("original : "+emp3.emp_name);
+        console.log(emp4.emp_name);
+        
         </script>
     </body>
 </html>
