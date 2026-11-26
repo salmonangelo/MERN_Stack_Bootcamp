@@ -1,0 +1,53 @@
+.cricket {
+    display: grid;
+    justify-items: center;
+    gap: 24px;
+    width: min(100%, 560px);
+    margin: 24px auto;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.score {
+    min-width: 64px;
+    min-height: 48px;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 8px;
+    background: #6941c6;
+    color: white;
+    font: inherit;
+    font-weight: 600;
+}
+
+.score:hover:not(:disabled) {
+    background: #5232a3;
+    transform: translateY(-2px);
+}
+
+.score:focus-visible {
+    outline: 3px solid #b69af4;
+    outline-offset: 3px;
+}
+
+.score:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.scoreBoard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 28px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: 600;
+}
